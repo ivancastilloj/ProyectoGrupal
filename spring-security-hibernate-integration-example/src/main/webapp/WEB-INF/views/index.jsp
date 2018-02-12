@@ -22,7 +22,7 @@
 		<input value="Logout" type="submit">
 	</form>
   <body>
-
+ 
 <img alt="descarga" src="fotos/descarga.jpg">
 
     <!-- Navigation -->
