@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class MyContoller {
 
-  @GetMapping("/")
-  public String index(Model model, Principal principal) {
-    model.addAttribute("message", "You are logged in as " + principal.getName());
-    return "index";
-  }
-  @PostMapping("/carrito")
-  public String carrito(Model model, Principal principal) {
-    model.addAttribute("message", "You are logged in as " + principal.getName());
-    return "carrito";
-  }
+	 @GetMapping("/")
+	  public String index(Model model, Principal principal) {
+	    model.addAttribute("message", "You are logged in as " + principal.getName());
+	    return "index";
+	  }
+	 @PostMapping("/carrito")
+	  public String carrito(Model model, Principal principal) {
+	    model.addAttribute("message", "You are logged in as " + principal.getName());
+	    return "carrito";
+	  }
 }
