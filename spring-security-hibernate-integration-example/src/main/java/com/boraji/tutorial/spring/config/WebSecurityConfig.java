@@ -27,7 +27,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
   @Override
   protected void configure(HttpSecurity http) throws Exception {
-    http.authorizeRequests().anyRequest().hasAnyRole("ADMIN", "USER")
+    http
+    .authorizeRequests()
+    .antMatchers("/static/**").permitAll()
+    .and()
+    .authorizeRequests().anyRequest().hasAnyRole("ADMIN", "USER")
     .and()
     .authorizeRequests().antMatchers("/login**").permitAll()
     .and()
@@ -37,13 +41,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     .and()
     .csrf().disable();
   
-    
-    http
-    .authorizeRequests()
-    .antMatchers("/", "/resources/**").permitAll()
-    .anyRequest().authenticated();
   }
-  
-
-
+ 
 }

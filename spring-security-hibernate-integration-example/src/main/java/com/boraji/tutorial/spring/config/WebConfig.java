@@ -7,7 +7,8 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.resource.PathResourceResolver;
+
+
 
 @Configuration
 @EnableWebMvc
@@ -25,12 +26,9 @@ public class WebConfig implements WebMvcConfigurer {
   
   @Override
   public void addResourceHandlers(ResourceHandlerRegistry registry) {
-      registry
-        .addResourceHandler("/resources/**")
-        .addResourceLocations("/resources/","/other-resources/")
-        .setCachePeriod(3600)
-        .resourceChain(true)
-        .addResolver(new PathResourceResolver());
+
+      registry.addResourceHandler("/static/**") //
+                .addResourceLocations("/static/").setCachePeriod(31556926);      
   }
    
 }
